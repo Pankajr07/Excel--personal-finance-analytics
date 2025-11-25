@@ -1,114 +1,144 @@
-# Excel--personal-finance-analytics
-An Excel-based personal finance dashboard analyzing 11 months of transaction data. Includes data cleaning, category mapping, monthly summaries, and dynamic PivotTable-driven visualizations.
 # Personal Finance Analytics – Excel Project
 
-This project analyzes **11 months of personal banking transactions** using Microsoft Excel to understand income, spending patterns, and net balance over time.
+An Excel-based personal finance dashboard analyzing **11 months of transaction data**.  
+Includes data cleaning, category mapping, monthly summaries, and dynamic PivotTable-driven visualizations.
 
-The dataset comes from my own bank exports and has been cleaned, structured, and summarized into an interactive dashboard.
+---
 
 ## 📂 File Overview
+
 **Main Excel File:**  
 ➡️ [Personal Finance Project.xlsx](Personal%20Finance%20Project.xlsx)
 
-This is the main workbook containing:
-  - raw + cleaned transaction data  
-  - category mappings  
-  - monthly summaries  
-  - PivotTables  
-  - an interactive dashboard
+This workbook contains:
 
-**Key Sheets:**
+- raw + cleaned transaction data  
+- category mappings  
+- monthly summaries  
+- PivotTables  
+- an interactive dashboard
 
-- **`Personal spending`**  
-  Core transaction table with:
-  - `Date`  
-  - `Month-year` (e.g. `2025-01`)  
-  - `Unique Id`  
-  - `Tran Type` (e.g. EFTPOS)  
-  - `Payee` (original description from bank)  
-  - `Merchant` (cleaned/standardised name)  
-  - `Category` (e.g. Groceries, Dining, Transport, etc.)  
-  - `Memo`  
-  - `Amount` (negative for spending, positive for income)  
-  - `Type` (e.g. `in` / `out`)
+---
 
-  In total, this sheet contains **220 transactions** across **11 months**, grouped into **16 spending categories** and **76 unique merchants**.
+## 📄 Key Sheets
 
-- **`MerchantMapping`**  
-  Mapping table to clean and standardise merchant names from messy bank descriptions into consistent merchant labels used in the analysis.
+### **1. Personal spending**
+Core transaction table with:
 
-- **`Category by month Year`**  
-  Aggregated table that summarises total spending per **category per month**, used as the source for charts and dashboard visuals.
+- Date  
+- Month-year (e.g. `2025-01`)  
+- Unique ID  
+- Tran Type (e.g. EFTPOS)  
+- Payee (raw bank description)  
+- Merchant (cleaned, standardised name)  
+- Category (e.g. Groceries, Dining, Transport, etc.)  
+- Memo  
+- Amount (negative = spending, positive = income)  
+- Type (`in` / `out`)
 
-- **`Pivot Tables`**  
-  A collection of PivotTables used to:
-  - calculate total income and total spending  
-  - break down spending by category  
-  - rank merchants by total spend  
-  - summarise monthly trends  
+This sheet contains **220 transactions** across **11 months**, grouped into **16 categories** and **76 merchants**.
 
-- **`Income Sparklines`**  
-  Visual mini-charts to quickly compare income and spending patterns over time.
+---
 
-- **`Dashboard`**  
-  The main dashboard view displaying:
-  - high-level KPIs  
-  - charts for monthly trends and category breakdown  
-  - a compact summary of personal finances over the period.
+### **2. MerchantMapping**
+Cleaning table used to standardise messy merchant names into consistent labels.
+
+---
+
+### **3. Category by Month-Year**
+Aggregated table summarising **total spending per category per month**.  
+Used as a source for charts and the dashboard.
+
+---
+
+### **4. Pivot Tables**
+PivotTables used to:
+
+- calculate total income & total spending  
+- break down spending by category  
+- rank merchants by spend  
+- summarise monthly trends
+
+---
+
+### **5. Income Sparklines**
+Mini line charts to compare income/spending trends over time.
+
+---
+
+### **6. Dashboard**
+A clean dashboard displaying:
+
+- KPI cards (Income, Spending, Net Balance)  
+- Monthly spending trend chart  
+- Category breakdown chart  
+- Summary visuals
 
 ---
 
 ## 📊 Metrics & Insights
 
-Using this workbook, I built a dashboard that highlights:
+From this analysis:
 
 - **Total Income:** 7,126.90  
 - **Total Spending:** 6,133.86  
-- **Net Balance:** 993.04 (income – spending over the period)
+- **Net Balance:** 993.04  
 
-Examples of questions the dashboard can answer:
+The dashboard answers questions such as:
 
-- Which months had the highest spending?
-- Which categories do I spend the most on (e.g. Groceries, Dining, Entertainment)?
-- Which merchants receive most of my money over time?
-- How does my spending compare month-to-month?
+- Which months had the highest spending?  
+- Which categories take up most of my money?  
+- Which merchants do I spend the most at?  
+- How does spending change month-to-month?
+
+---
+
+## 📌 Data Notes (Important)
+
+**Cash income is intentionally excluded from this analysis.**  
+Reliable historical records for cash earnings were not available, and adding estimated values would reduce the accuracy and integrity of the results.
+
+To maintain clean, verifiable, and fully reproducible insights, this dashboard focuses exclusively on **bank-recorded electronic transactions** with consistent timestamps, descriptions, and amounts.
+
+A future enhancement may introduce a manual cash-logging sheet if reliable entries become available.
 
 ---
 
 ## 🧹 Data Cleaning & Preparation
 
-Key data preparation steps in Excel:
+Key steps performed:
 
-1. **Imported bank exports** into the `Personal spending` sheet.
-2. Created a `Month-year` column to support monthly summaries and charts.
-3. Standardised merchant names using the `MerchantMapping` sheet.
-4. Assigned each transaction to a **spending category** (e.g. Groceries, Dining, Shopping, Subscriptions, Transport, etc.).
-5. Ensured all amounts were correctly signed (negative for spending, positive for income).
-6. Built a structured table ready for PivotTables and dashboarding.
+- Imported bank transaction exports  
+- Created a `Month-year` field for grouping  
+- Standardised merchant names using mapping table  
+- Categorised each transaction  
+- Corrected transaction signs (income vs spending)  
+- Built structured tables connected to PivotTables
 
 ---
 
 ## 🛠 Excel Techniques Used
 
-- Structured Tables for transaction data  
-- **PivotTables** for aggregation (by month, category, merchant)  
-- `SUMIFS`, basic formulas, and calculated fields  
-- Custom date grouping (`Month-year`)  
-- Dashboard layout using:
-  - charts (column/line/donut)  
-  - summary cells  
-  - references to PivotTable outputs  
+- Structured Tables  
+- PivotTables  
+- `SUMIFS` and other formula-based metrics  
+- Custom month-year grouping  
+- Dashboard design using:  
+  - column, line, and donut charts  
+  - summary KPI cells  
+  - PivotTable references  
 
 ---
 
 ## 🚀 Future Improvements
 
-- Export the cleaned transaction data into **SQL Server** and replicate the analysis in SQL.
-- Build a **Power BI** dashboard on top of the same data model.
-- Add more advanced metrics:
+- Export cleaned data into SQL Server  
+- Rebuild analysis in SQL (CTEs, aggregates, window functions)  
+- Build a Power BI dashboard  
+- Add advanced metrics such as:  
   - savings rate %  
-  - category-based trend lines  
-  - month-over-month % change in key categories.
+  - category trends over time  
+  - month-over-month % changes  
 
 ---
 
@@ -117,7 +147,12 @@ Key data preparation steps in Excel:
 This project is part of my analytics portfolio as an **aspiring Data / Reporting Analyst**.
 
 It demonstrates my ability to:
-- work with real financial transaction data  
-- clean and structure messy exports into usable tables  
-- summarise and visualise key metrics in Excel  
-- extract practical insights about spending behaviour.
+
+- work with real financial data  
+- clean and structure messy exports  
+- build meaningful summaries  
+- visualize insights clearly  
+- explain spending patterns and behaviour  
+
+---
+
