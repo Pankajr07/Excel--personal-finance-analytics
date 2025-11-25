@@ -11,7 +11,7 @@ The dataset comes from my own bank exports and has been cleaned, structured, and
 ## 📂 File Overview
 
 **Main file:**
-- `Personal_Finance_Dashboard.xlsx`  
+- `Personal_Finance_Project.xlsx`  
   This is the main workbook containing:
   - raw + cleaned transaction data  
   - category mappings  
