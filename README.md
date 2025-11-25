@@ -11,8 +11,9 @@ The dataset comes from my own bank exports and has been cleaned, structured, and
 ## 📂 File Overview
 
 **Main file:**
-- `Personal_Finance_Project.xlsx`  
-  This is the main workbook containing:
+https://github.com/Pankajr07/Excel--personal-finance-analytics/blob/main/Personal%20Finance%20Project.xlsx
+
+ This is the main workbook containing:
   - raw + cleaned transaction data  
   - category mappings  
   - monthly summaries  
