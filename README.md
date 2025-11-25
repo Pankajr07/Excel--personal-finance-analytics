@@ -10,10 +10,11 @@ The dataset comes from my own bank exports and has been cleaned, structured, and
 
 ## 📂 File Overview
 
-**Main file:**
-https://github.com/Pankajr07/Excel--personal-finance-analytics/blob/main/Personal%20Finance%20Project.xlsx
+## 📂 File Overview
+**Main Excel File:**  
+➡️ [Personal Finance Project.xlsx](Personal%20Finance%20Project.xlsx)
 
- This is the main workbook containing:
+This is the main workbook containing:
   - raw + cleaned transaction data  
   - category mappings  
   - monthly summaries  
