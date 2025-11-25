@@ -6,10 +6,6 @@ This project analyzes **11 months of personal banking transactions** using Micro
 
 The dataset comes from my own bank exports and has been cleaned, structured, and summarized into an interactive dashboard.
 
----
-
-## 📂 File Overview
-
 ## 📂 File Overview
 **Main Excel File:**  
 ➡️ [Personal Finance Project.xlsx](Personal%20Finance%20Project.xlsx)
